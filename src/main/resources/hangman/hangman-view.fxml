@@ -1,16 +1,270 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
+<?import javafx.scene.Group?>
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="hangman.HangmanController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+<AnchorPane prefHeight="693.0" prefWidth="1085.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hangman.HangmanController">
+   <children>
+      <AnchorPane fx:id="mainPane" layoutY="2.0" prefHeight="728.0" prefWidth="1085.0" style="-fx-background-radius: 100;">
+         <children>
+            <Rectangle arcHeight="1.0" arcWidth="1.0" height="761.0" layoutY="-2.0" stroke="#ffffff00" strokeType="INSIDE" width="1085.0">
+               <fill>
+                  <LinearGradient endX="0.6066350710900474" endY="0.7298578199052133" startX="0.16587677725118483" startY="0.48815165876777256">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.9200000166893005" green="0.3495999872684479" blue="0.3495999872684479" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.6836419701576233" green="0.24074074625968933" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Rectangle>
+            <AnchorPane layoutY="-7.0" prefHeight="668.0" prefWidth="1085.0" style="-fx-background-radius: 100;">
+               <children>
+                  <ImageView fx:id="loseGif" fitHeight="395.0" fitWidth="488.0" layoutX="336.0" layoutY="206.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@hanging-problem.gif" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="winGif" fitHeight="446.0" fitWidth="361.0" layoutX="418.0" layoutY="207.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@happy.gif" />
+                     </image>
+                  </ImageView>
+                  <AnchorPane fx:id="playPane" layoutX="60.0" layoutY="213.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="426.0" prefWidth="989.0" style="-fx-background-radius: 15;">
+                     <children>
+                        <Line endX="92.0" layoutX="120.0" layoutY="391.0" startX="-88.0" strokeWidth="10.0" />
+                        <Line endX="-67.0" endY="-284.0" layoutX="187.0" layoutY="319.0" startX="-67.0" startY="71.5" strokeWidth="10.0" />
+                        <Line endX="91.0" layoutX="220.0" layoutY="30.0" startX="-100.0" strokeWidth="10.0" />
+                        <Line endX="30.0" endY="-52.0" layoutX="164.0" layoutY="87.0" startX="-39.0" startY="17.0" strokeWidth="5.0" />
+                        <Button layoutX="423.0" layoutY="218.0" mnemonicParsing="false" onAction="#keyboardClicked" prefHeight="53.0" prefWidth="56.0" style="-fx-background-radius: 30;" text="Q">
+                           <font>
+                              <Font name="Footlight MT Light" size="24.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="728.0" layoutY="291.0" mnemonicParsing="false" onAction="#keyboardClicked" prefHeight="51.0" prefWidth="56.0" style="-fx-background-radius: 30;" text="H">
+                           <font>
+                              <Font name="Footlight MT Light" size="24.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="674.0" layoutY="291.0" mnemonicParsing="false" onAction="#keyboardClicked" prefHeight="51.0" prefWidth="56.0" style="-fx-background-radius: 30;" text="G">
+                           <font>
+                              <Font name="Footlight MT Light" size="24.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="619.0" layoutY="291.0" mnemonicParsing="false" onAction="#keyboardClicked" prefHeight="51.0" prefWidth="56.0" style="-fx-background-radius: 30;" text="F">
+                           <font>
+                              <Font name="Footlight MT Light" size="24.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="563.0" layoutY="291.0" mnemonicParsing="false" onAction="#keyboardClicked" prefHeight="51.0" prefWidth="56.0" style="-fx-background-radius: 30;" text="D">
+                           <font>
+                              <Font name="Footlight MT Light" size="24.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="507.0" layoutY="291.0" mnemonicParsing="false" onAction="#keyboardClicked" prefHeight="51.0" prefWidth="56.0" style="-fx-background-radius: 30;" text="S">
+                           <font>
+                              <Font name="Footlight MT Light" size="24.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="451.0" layoutY="291.0" mnemonicParsing="false" onAction="#keyboardClicked" prefHeight="51.0" prefWidth="56.0" style="-fx-background-radius: 30;" text="A">
+                           <font>
+                              <Font name="Footlight MT Light" size="24.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="646.0" layoutY="220.0" mnemonicParsing="false" onAction="#keyboardClicked" prefHeight="51.0" prefWidth="56.0" style="-fx-background-radius: 30;" text="T">
+                           <font>
+                              <Font name="Footlight MT Light" size="24.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="858.0" layoutY="220.0" mnemonicParsing="false" onAction="#keyboardClicked" prefHeight="51.0" prefWidth="56.0" style="-fx-background-radius: 30;" text="O">
+                           <font>
+                              <Font name="Footlight MT Light" size="24.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="807.0" layoutY="219.0" mnemonicParsing="false" onAction="#keyboardClicked" prefHeight="51.0" prefWidth="56.0" style="-fx-background-radius: 30;" text="I">
+                           <font>
+                              <Font name="Footlight MT Light" size="24.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="914.0" layoutY="220.0" mnemonicParsing="false" onAction="#keyboardClicked" prefHeight="51.0" prefWidth="48.0" style="-fx-background-radius: 30;" text="P">
+                           <font>
+                              <Font name="Footlight MT Light" size="24.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="752.0" layoutY="220.0" mnemonicParsing="false" onAction="#keyboardClicked" prefHeight="51.0" prefWidth="56.0" style="-fx-background-radius: 30;" text="U">
+                           <font>
+                              <Font name="Footlight MT Light" size="24.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="700.0" layoutY="219.0" mnemonicParsing="false" onAction="#keyboardClicked" prefHeight="51.0" prefWidth="56.0" style="-fx-background-radius: 30;" text="Y">
+                           <font>
+                              <Font name="Footlight MT Light" size="24.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="591.0" layoutY="220.0" mnemonicParsing="false" onAction="#keyboardClicked" prefHeight="51.0" prefWidth="56.0" style="-fx-background-radius: 30;" text="R">
+                           <font>
+                              <Font name="Footlight MT Light" size="24.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="535.0" layoutY="220.0" mnemonicParsing="false" onAction="#keyboardClicked" prefHeight="51.0" prefWidth="56.0" style="-fx-background-radius: 30;" text="E">
+                           <font>
+                              <Font name="Footlight MT Light" size="24.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="479.0" layoutY="219.0" mnemonicParsing="false" onAction="#keyboardClicked" prefHeight="51.0" prefWidth="56.0" style="-fx-background-radius: 30;" text="W">
+                           <font>
+                              <Font name="Footlight MT Light" size="24.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="619.0" layoutY="360.0" mnemonicParsing="false" onAction="#keyboardClicked" prefHeight="51.0" prefWidth="56.0" style="-fx-background-radius: 30;" text="C">
+                           <font>
+                              <Font name="Footlight MT Light" size="24.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="563.0" layoutY="360.0" mnemonicParsing="false" onAction="#keyboardClicked" prefHeight="51.0" prefWidth="56.0" style="-fx-background-radius: 30;" text="X">
+                           <font>
+                              <Font name="Footlight MT Light" size="24.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="507.0" layoutY="360.0" mnemonicParsing="false" onAction="#keyboardClicked" prefHeight="51.0" prefWidth="56.0" style="-fx-background-radius: 30;" text="Z">
+                           <font>
+                              <Font name="Footlight MT Light" size="24.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="834.0" layoutY="291.0" mnemonicParsing="false" onAction="#keyboardClicked" prefHeight="51.0" prefWidth="56.0" style="-fx-background-radius: 30;" text="K">
+                           <font>
+                              <Font name="Footlight MT Light" size="24.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="780.0" layoutY="291.0" mnemonicParsing="false" onAction="#keyboardClicked" prefHeight="51.0" prefWidth="56.0" style="-fx-background-radius: 30;" text="J">
+                           <font>
+                              <Font name="Footlight MT Light" size="24.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="780.0" layoutY="360.0" mnemonicParsing="false" onAction="#keyboardClicked" prefHeight="51.0" prefWidth="56.0" style="-fx-background-radius: 30;" text="N">
+                           <font>
+                              <Font name="Footlight MT Light" size="24.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="834.0" layoutY="360.0" mnemonicParsing="false" onAction="#keyboardClicked" prefHeight="51.0" prefWidth="56.0" style="-fx-background-radius: 30;" text="M">
+                           <font>
+                              <Font name="Footlight MT Light" size="24.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="728.0" layoutY="360.0" mnemonicParsing="false" onAction="#keyboardClicked" prefHeight="51.0" prefWidth="56.0" style="-fx-background-radius: 30;" text="B">
+                           <font>
+                              <Font name="Footlight MT Light" size="24.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="674.0" layoutY="360.0" mnemonicParsing="false" onAction="#keyboardClicked" prefHeight="51.0" prefWidth="56.0" style="-fx-background-radius: 30;" text="V">
+                           <font>
+                              <Font name="Footlight MT Light" size="24.0" />
+                           </font>
+                        </Button>
+                        <Button layoutX="886.0" layoutY="291.0" mnemonicParsing="false" onAction="#keyboardClicked" prefHeight="51.0" prefWidth="56.0" style="-fx-background-radius: 30;" text="L">
+                           <font>
+                              <Font name="Footlight MT Light" size="24.0" />
+                           </font>
+                        </Button>
+                        <AnchorPane layoutX="428.0" layoutY="8.0" prefHeight="206.0" prefWidth="529.0" style="-fx-background-color: TRANSPARENT;">
+                           <children>
+                              <AnchorPane layoutX="1.0" opacity="0.24" prefHeight="206.0" prefWidth="529.0" style="-fx-background-color: #d7d7d7; -fx-background-radius: 15;" />
+                              <HBox fx:id="blanks" layoutX="25.0" layoutY="90.0" prefHeight="91.0" prefWidth="488.0" style="-fx-alignment: CENTER;" />
+                              <Label fx:id="topic" layoutX="176.0" layoutY="14.0" prefHeight="51.0" prefWidth="178.0" style="-fx-alignment: CENTER;">
+                                 <font>
+                                    <Font name="Footlight MT Light" size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="drawingPane" layoutX="204.0" layoutY="33.0" prefHeight="321.0" prefWidth="154.0" />
+                     </children>
+                  </AnchorPane>
+                  <Button fx:id="menuButton" layoutX="221.0" layoutY="663.0" mnemonicParsing="false" onAction="#menuInHangmanGame" prefHeight="76.0" prefWidth="154.0" style="-fx-background-radius: 50;" text="Menu">
+                     <font>
+                        <Font name="Footlight MT Light" size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="playAgain" layoutX="756.0" layoutY="663.0" mnemonicParsing="false" onAction="#playAgain" prefHeight="76.0" prefWidth="154.0" style="-fx-background-radius: 50;" text="Play Again">
+                     <font>
+                        <Font name="Footlight MT Light" size="24.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="announse" layoutX="285.0" layoutY="115.0" prefHeight="76.0" prefWidth="516.0" style="-fx-alignment: CENTER; -fx-opacity: 0;" textFill="#bc0101">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="pauseButton" layoutX="476.0" layoutY="14.0" mnemonicParsing="false" onAction="#pause" prefHeight="59.0" prefWidth="62.0" style="-fx-background-color: #000;" styleClass="pause" stylesheets="@svg.css" textFill="#c3c3c3" />
+                  <Group fx:id="pauseMenu" layoutX="14.0" layoutY="8.0" visible="false">
+                     <children>
+                        <Rectangle arcHeight="60.0" arcWidth="60.0" fill="#000000e2" height="764.0" layoutX="-15.0" layoutY="-6.0" stroke="BLACK" strokeType="INSIDE" width="1086.0" />
+                        <Group layoutX="355.0" layoutY="138.0">
+                           <children>
+                              <Rectangle arcHeight="50.0" arcWidth="50.0" height="379.0" layoutX="-10.0" stroke="BLACK" strokeType="INSIDE" width="338.0">
+                                 <fill>
+                                    <RadialGradient centerX="0.48342541436464087" centerY="0.447867298578199" radius="0.5">
+                                       <stops>
+                                          <Stop>
+                                             <color>
+                                                <Color red="0.014692982658743858" blue="0.8815789222717285" />
+                                             </color>
+                                          </Stop>
+                                          <Stop offset="1.0">
+                                             <color>
+                                                <Color red="0.0036549707874655724" green="0.006347465794533491" blue="0.01315789483487606" />
+                                             </color>
+                                          </Stop>
+                                       </stops>
+                                    </RadialGradient>
+                                 </fill>
+                              </Rectangle>
+                              <Button layoutX="105.0" layoutY="61.0" mnemonicParsing="false" onAction="#resume" style="-fx-background-color: transparent;" text="Resume" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="24.0" />
+                                 </font>
+                              </Button>
+                              <Button layoutX="115.0" layoutY="218.0" mnemonicParsing="false" onAction="#menuInHangmanGame" style="-fx-background-color: transparent;" text="Menu" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="24.0" />
+                                 </font>
+                              </Button>
+                              <Button layoutX="86.0" layoutY="138.0" mnemonicParsing="false" onAction="#playAgain" prefHeight="51.0" prefWidth="159.0" style="-fx-background-color: transparet;" text="Play Again" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="24.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </Group>
+                     </children>
+                  </Group>
+                  <Label fx:id="timeLabel" layoutX="555.0" layoutY="18.0" prefHeight="51.0" prefWidth="97.0" style="-fx-alignment: center; -fx-background-color: #d7d7d7; -fx-background-radius: 50; -fx-opacity: 0.7;" text="00:00">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

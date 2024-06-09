@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.QuadCurve?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="744.0" prefWidth="1086.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hangman.HangmanController">
+   <children>
+      <Rectangle arcHeight="1.0" arcWidth="1.0" height="761.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1086.0">
+         <fill>
+            <LinearGradient endX="0.957345971563981" endY="0.03317535545023697" startX="0.085308056872038" startY="0.943127962085308">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.04161793366074562" green="0.005116959102451801" blue="0.5526315569877625" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.48780487804878053">
+                     <color>
+                        <Color red="0.002802144270390272" green="0.6052631735801697" blue="0.5650990605354309" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.6371951219512195">
+                     <color>
+                        <Color red="0.006000000052154064" green="0.6000000238418579" blue="0.5604000091552734" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.9078947305679321" green="0.9078947305679321" blue="0.9078947305679321" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Group fx:id="menu" visible="false">
+         <children>
+            <AnchorPane layoutX="312.0" layoutY="3.0" prefHeight="691.0" prefWidth="463.0">
+               <children>
+                  <ImageView fitHeight="284.0" fitWidth="303.0" layoutX="93.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@hangman-gif.gif" />
+                     </image>
+                  </ImageView>
+                  <Button layoutX="169.0" layoutY="319.0" mnemonicParsing="false" onAction="#playAgain" prefHeight="79.0" prefWidth="133.0" style="-fx-background-radius: 40;" text="Play">
+                     <font>
+                        <Font name="Curlz MT" size="36.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="129.0" layoutY="443.0" mnemonicParsing="false" style="-fx-background-radius: 40;" text="Leaderboard">
+                     <font>
+                        <Font name="Curlz MT" size="36.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="184.0" layoutY="571.0" mnemonicParsing="false" onAction="#exit" style="-fx-background-radius: 40;" text="Exit">
+                     <font>
+                        <Font name="Curlz MT" size="36.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </children>
+      </Group>
+      <AnchorPane fx:id="logInPane" layoutX="305.0" layoutY="108.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="546.0" prefWidth="478.0" style="-fx-background-radius: 20;">
+          <children>
+              <TextField layoutX="100.0" layoutY="174.0" prefHeight="56.0" prefWidth="298.0" promptText="Username" style="-fx-background-radius: 20;">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+              <TextField layoutX="100.0" layoutY="245.0" prefHeight="56.0" prefWidth="298.0" promptText="Password" style="-fx-background-radius: 20;">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+              <Button layoutX="210.0" layoutY="332.0" mnemonicParsing="false" onAction="#logIn" prefHeight="39.0" prefWidth="78.0" style="-fx-background-radius: 30; -fx-background-color: transparent;" text="Log In">
+                  <font>
+                      <Font name="System Bold" size="18.0" />
+                  </font>
+              </Button>
+              <Label layoutX="135.0" layoutY="391.0" prefHeight="46.0" prefWidth="228.0" text="You don't have an account?">
+                  <font>
+                      <Font size="18.0" />
+                  </font>
+              </Label>
+            <Circle layoutX="268.0" layoutY="78.0" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+            <Line endX="129.0" endY="90.5" layoutX="41.0" layoutY="50.0" startX="272.5" startY="90.5" strokeWidth="2.0" />
+            <Line endX="26.0" endY="-71.0" layoutX="187.0" layoutY="116.0" startX="26.0" startY="25.0" strokeWidth="2.0" />
+            <Line endX="60.0" endY="-9.0" layoutX="207.0" layoutY="44.0" startX="6.0" strokeWidth="2.0" />
+            <Line endX="-41.0" endY="-6.0" layoutX="281.0" layoutY="45.0" startX="-67.0" startY="24.0" strokeWidth="2.0" />
+            <Line endX="1.0" endY="49.0" layoutX="267.0" layoutY="29.0" startX="1.3284912109375" startY="4.585784912109375" />
+            <Line endX="7.0" endY="17.0" layoutX="261.0" layoutY="93.0" startX="7.0" startY="-8.0" />
+            <QuadCurve controlX="84.0" controlY="-18.0" endX="91.5" endY="-13.0" fill="#ffffff00" layoutX="177.0" layoutY="103.0" startX="84.0" startY="1.0" stroke="BLACK" strokeType="INSIDE" />
+            <QuadCurve controlX="88.0" controlY="-28.0" endX="81.5" endY="-24.041656494140625" fill="#ffffff00" layoutX="187.0" layoutY="113.0" startX="88.0" startY="-10.0" stroke="BLACK" strokeType="INSIDE" />
+            <QuadCurve controlX="84.75" controlY="-10.0" endX="84.75" endY="13.0" fill="#ffffff00" layoutX="187.0" layoutY="113.0" startX="81.0" startY="-2.5" stroke="BLACK" strokeType="INSIDE" />
+            <QuadCurve controlX="77.75" controlY="-9.0" endX="80.5" endY="-2.5" fill="#ffffff00" layoutX="187.0" layoutY="113.0" startX="77.75" startY="13.0" stroke="BLACK" strokeType="INSIDE" />
+            <Button layoutX="152.0" layoutY="24.0" mnemonicParsing="false" onAction="#switchToSignUp" prefHeight="128.0" prefWidth="178.0" style="-fx-background-radius: 50; -fx-background-color: transparent;">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Label layoutX="163.0" layoutY="433.0" prefHeight="33.0" prefWidth="172.0" style="-fx-alignment: center;" text="Click on Hangman">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+          </children>
+      </AnchorPane>
+      <AnchorPane fx:id="signUpPane" layoutX="305.0" layoutY="108.0" prefHeight="546.0" prefWidth="478.0" visible="false">
+         <children>
+            <Circle layoutX="277.0" layoutY="75.0" radius="7.0" stroke="BLACK" strokeType="INSIDE" />
+            <Line endX="129.0" endY="90.5" layoutX="50.0" layoutY="31.0" startX="272.5" startY="90.5" strokeWidth="2.0" />
+            <Line endX="26.0" endY="-71.0" layoutX="196.0" layoutY="97.0" startX="26.0" startY="25.0" strokeWidth="2.0" />
+            <Line endX="60.0" endY="-9.0" layoutX="216.0" layoutY="25.0" startX="6.0" strokeWidth="2.0" />
+            <Line endX="-41.0" endY="-6.0" layoutX="290.0" layoutY="26.0" startX="-67.0" startY="24.0" strokeWidth="2.0" />
+            <Line endX="7.0" endY="17.0" layoutX="270.0" layoutY="90.0" startX="7.0" startY="-8.0" />
+            <QuadCurve controlX="84.0" controlY="-18.0" endX="91.5" endY="-13.0" fill="#ffffff00" layoutX="186.0" layoutY="100.0" startX="84.0" startY="1.0" stroke="BLACK" strokeType="INSIDE" />
+            <QuadCurve controlX="85.0" controlY="-17.5" endX="80.5" endY="-23.0" fill="#ffffff00" layoutX="196.0" layoutY="110.0" startX="96.0" startY="-37.5" stroke="BLACK" strokeType="INSIDE" />
+            <QuadCurve controlX="84.75" controlY="-10.0" endX="84.75" endY="13.0" fill="#ffffff00" layoutX="196.0" layoutY="110.0" startX="81.0" startY="-2.5" stroke="BLACK" strokeType="INSIDE" />
+            <QuadCurve controlX="77.75" controlY="-9.0" endX="80.5" endY="-2.5" fill="#ffffff00" layoutX="196.0" layoutY="110.0" startX="77.75" startY="13.0" stroke="BLACK" strokeType="INSIDE" />
+            <Button layoutX="162.0" layoutY="10.0" mnemonicParsing="false" onAction="#switchToLogIn" prefHeight="128.0" prefWidth="178.0" style="-fx-background-radius: 50; -fx-background-color: transparent;">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="283.0" layoutY="31.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="35.0" style="-fx-background-color: #000;" styleClass="message" stylesheets="@svg.css" text="Hi" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="193.0" layoutY="388.0" mnemonicParsing="false" onAction="#signUp" style="-fx-background-color: transparent; -fx-background-radius: 20;" text="Sign Up">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Button>
+            <Label layoutX="185.0" layoutY="455.0" text="Have an account?">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="148.0" layoutY="488.0" prefHeight="27.0" prefWidth="204.0" text="Click on Not hanged man">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField layoutX="76.0" layoutY="195.0" prefHeight="46.0" prefWidth="352.0" promptText="Nickname" style="-fx-background-radius: 20;">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <TextField layoutX="77.0" layoutY="254.0" prefHeight="46.0" prefWidth="352.0" promptText="Username" style="-fx-background-radius: 20;">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+            <TextField layoutX="76.0" layoutY="312.0" prefHeight="46.0" prefWidth="352.0" promptText="Password" style="-fx-background-radius: 20;">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </TextField>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

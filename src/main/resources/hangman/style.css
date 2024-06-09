@@ -1,0 +1,10 @@
+.button{
+    -fx-background-color: TRANSPARENT;
+}
+.button:hover {
+    -fx-background-color: rgba(129, 129, 129, 0.42);
+}
+.text{
+    -fx-font: 24px;
+}
+/*linear-gradient(from 16.5877% 48.8152% to 60.6635% 72.9858%, #eb5959 0.0%, #ae3dff 100.0%)*/

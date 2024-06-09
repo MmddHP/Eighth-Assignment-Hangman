@@ -3,6 +3,7 @@ package hangman;
 import javafx.animation.PathTransition;
 import javafx.animation.SequentialTransition;
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
@@ -20,31 +21,25 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+import java.util.Objects;
+
 
 public class HangmanApp extends Application {
 
     @Override
-    public void start(Stage primaryStage) {
-        // Create an ImageView
-        ImageView imageView = new ImageView(new Image("path/to/your/image.jpg"));
-        imageView.setFitWidth(200);
-        imageView.setFitHeight(200);
-
-        // Create a rectangle with rounded corners to use as the clip
-        Rectangle clip = new Rectangle(200, 200);
-        clip.setArcWidth(30);
-        clip.setArcHeight(30);
-
-        // Set the clip to the ImageView
-        imageView.setClip(clip);
-
-        // Add the ImageView to the layout
-        StackPane root = new StackPane(imageView);
-        Scene scene = new Scene(root, 300, 300);
-
-        primaryStage.setTitle("Rounded ImageView");
+    public void start(Stage primaryStage) throws IOException {
+        HangmanController.setShouldInitialize(false);
+        FXMLLoader fxmlLoader = new FXMLLoader(HangmanApp.class.getResource("log-in.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        String css = Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm();
+        primaryStage.setTitle("Hangman");
+        scene.getStylesheets().add(css);
+        primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("img_2.png")));
         primaryStage.setScene(scene);
+        primaryStage.setResizable(false);
         primaryStage.show();
+
     }
 
     public static void main(String[] args) {
